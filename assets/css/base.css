@@ -1,0 +1,222 @@
+:root{
+    --primary-color:#f8482f;
+    --white-color:#fff;
+    --black-color:#000; 
+    --text-color:#333;
+    --border-color: #dbdbdb;
+    
+
+    --navbar-height:43px;
+    --header-height:130px;
+    --header-width-seach-height:calc(var(--header-height) - var(--navbar-height));
+
+
+}
+* {
+    box-sizing: inherit;
+}
+html {
+    font-size: 62.5%;
+    line-height:1.6rem;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+.grid{
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+.grid__full-width{
+    width: 100%;
+}
+.grid__row{
+    display: flex;
+    flex-wrap: wrap;
+}
+/* Animation */
+@keyframes fadeIn{
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity:1;
+    }
+}
+/* làm background lớn lên*/
+@keyframes growth{
+    from {
+        transform: scale(var(--growth-from))
+    }
+    to {
+        transform: scale(var(--growth-to))
+    }
+}
+/* Modal */
+.modal{
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display:flex;
+    animation: fadeIn linear 0.1s;
+}
+.modal__overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+
+}
+.modal__body{
+    margin: auto;
+    
+    position: relative;
+    z-index: 1;
+    --growth-from:0.7;
+    --growth-to:1;
+    animation: growth linear 0.2s;
+    
+}
+/* Button đùng chung */
+.btn{
+    min-width: 142px;
+    min-height: 34px;
+    text-decoration: none;
+    border: none;
+    border-radius: 2px;
+    font-size: 1.5rem;
+    padding:0 12px;
+    outline: none;
+    cursor: pointer;
+    color:var(--text-color);
+    background-color:var(--white-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1.4rem;
+}
+
+
+.btn.btn--primary{
+    color: var(--white-color);
+    background-color: var(--primary-color);
+}
+
+.btn.btn--disabled{
+    color: #949494;
+    cursor: default;
+    background-color: #c3c3c3;
+}
+.btn--size-s{
+    height:32px;
+    font-size: 1.2rem;
+    padding:0 8px;
+
+}
+.col-lg-3,
+.col-md-3,
+.col-sm-3,
+.col-lg-12,
+.col-md-12,
+.col-sm-12,
+.col-lg-8,
+.col-md-8,
+.col-sm-8,
+.col-sm-4,
+.col-lg-4,
+.col-md-4{
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    
+}
+.mb-3,
+.my-3 {
+    margin-bottom: 1rem !important
+}
+
+.px-0 {
+    padding-right: 0 !important
+}
+
+.row{
+    display: flex;
+    
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.mb-4,
+.my-4 {
+    margin-bottom: 1.5rem !important
+}
+
+@media (min-width:576px) {
+    .col-sm-3 {
+        -ms-flex: 0 0 25%;
+        flex: 0 0 25%;
+        max-width: 25%
+    }
+    .col-sm-4 {
+        -ms-flex: 0 0 33.333333%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%
+    }
+    .col-sm-8 {
+        -ms-flex: 0 0 66.666667%;
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%
+    }
+    .col-sm-12 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%
+    }
+}
+@media (min-width:768px) {
+    .col-md-3 {
+        -ms-flex: 0 0 25%;
+        flex: 0 0 25%;
+        max-width: 25%
+    }
+    .col-md-4 {
+        -ms-flex: 0 0 33.333333%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%
+    }
+    .col-md-8 {
+        -ms-flex: 0 0 66.666667%;
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%
+    }
+    .col-md-12 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%
+    }
+}
+@media (min-width:992px) {
+    .col-lg-3 {
+        -ms-flex: 0 0 25%;
+        flex: 0 0 25%;
+        max-width: 25%
+    }
+    .col-lg-4 {
+        -ms-flex: 0 0 33.333333%;
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%
+    }
+    .col-lg-8 {
+        -ms-flex: 0 0 66.666667%;
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%
+    }
+    .col-lg-12 {
+        -ms-flex: 0 0 100%;
+        flex: 0 0 100%;
+        max-width: 100%
+    }
+}
